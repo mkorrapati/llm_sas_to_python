@@ -1,6 +1,1 @@
-[
-    {
-        "role": "system",
-        "content": "You are an AI assistant that converts SAS code to Python."
-    }
-]
+[{"role": "system", "content": "You are an AI assistant that converts SAS code to Python."}, {"role": "user", "content": "\n/* Assign some macro variables */\n%let var1 = test;\n%let id = 39;\n\n/* Print to log */\n%put var1 = &var1.;\n%put id = &id.;\n/* Use the macro variables in a data step to create table */\ndata test;\n       m&id. = 333;\n       v = \"&var1.\";\nrun;\n"}, {"role": "system", "content": "# Assign some macro variables\nvar1 = 'test'\nid = 39\n\n# Print to log\nprint('var1 =', var1)\nprint('id =', id)\n\n# Use the macro variables in a data step to create a table\ntest = pd.DataFrame({'m' + str(id): 333, 'v': var1})"}]
